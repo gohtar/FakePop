@@ -23,6 +23,6 @@ Route::get('/create', function () {
 
 Route::post('/',function(Request $request){
     $phonenumber = $request->input('scammernumber');
-    return view('popups.virus1',['title'=>'','phonenumber'=>$phonenumber]);
-    
+    $title = $request->input('popupTitle');
+    return view('popups.virus1',['title'=> $title,'phonenumber'=>$phonenumber]);    
 });

@@ -29,7 +29,7 @@ How to get running (Linux Instructions):
 
 ### How do I use the popups? ###
 
-Once the code is installed and running just point your browser to http://\[ip address\]/create
+Once the code is installed and running just point your browser to http://{ip address}/create
 
 This app was created with the intention that it would not have a domain associated with it, but instead you can use your computer's hosts file to make up domain names for it on the fly.
 
@@ -38,3 +38,9 @@ The root web page was also intentionally left blank in case the scammer tries to
 ### Who do I talk to? ###
 
  * Repo owner or admin
+ 
+### I want to see it now ###
+
+Okay go to http://http://45.77.73.52/create
+
+Feel free to use that server until I take it down if things get out of control.

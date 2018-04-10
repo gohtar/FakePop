@@ -19,46 +19,13 @@
                 margin: 0;
             }
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
             .title {
                 font-size: 3em;
             }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
+            .popup-setting
+            {
+                display:none;
             }
         </style>
     </head>
@@ -67,40 +34,63 @@
             <div class="content">
             
                 <div class="row">
-                    <div class="col-sm title">
-                        Fake Tech Scammer Popup
+                    <div class="col-sm title text-center">
+                        Display a Fake Tech Scammer Popup
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm">
-                        <form action="/" method="post" target="_blank">
-                            @csrf
-                            
-                            <div class="form-group">
-                                <label for="popupTitleInput">Popup Title (title of tab or window)</label>
-                                <input type="text" class="form-control text-center" id="popupTitleInput" name="popupTitle" value="Windows Firewall Warning">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="calledPhoneNumberInput">Called Phone Number (Type it exactly how you want it to appear)</label>
-                                <input type="text" class="form-control text-center" id="calledPhoneNumberInput" name="scammernumber">
-                            </div>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    </div>
+                </div>
 
-                            <div class="form-group">
-                                <label for="errorCodeTextInput">Error Code (if any)</label>
-                                <input type="text" class="form-control text-center" id="errorCodeTextInput" name="errorcode">
-                            </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <form action="/" id="createPopupForm" method="post" target="_blank">
+                            @csrf
 
                             <div class="form-group">
                                 <label for="popupOptions">Popup Type</label>
-                                <select id="popupOptions" name="popup_id">
+                                <select class="form-control" id="popupOptions" name="popup_id" required>
                                 @foreach($popup_options as $id => $option_text)
                                     <option value="{{$id}}">{{$option_text}}</option>
                                 @endforeach
                                 </select>                                
                             </div>
-                            
+                            <hr>
+                            <fieldset>
+                                <label class="font-weight-bold">Common Settings</label>
+                                
+                                <div class="form-group">
+                                    <label for="popupTitleInput">Popup Title (title of tab or window)</label>
+                                    <input type="text" class="form-control" id="popupTitleInput" name="popupTitle" value="">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="calledPhoneNumberInput">Called Phone Number (Type it exactly how you want it to appear)</label>
+                                    <input type="text" class="form-control" id="calledPhoneNumberInput" name="scammernumber">
+                                </div>
+
+                            </fieldset>
+                            <hr>
+                            <fieldset>
+                                <label class="font-weight-bold">Popup Specific Settings</label>
+
+                                <div class="form-group popup-setting" id="errorCodeInputGroup">
+                                    <label for="errorCodeTextInput">Error Code</label>
+                                    <input type="text" class="form-control" id="errorCodeTextInput" name="errorcode">
+                                </div>
+                            </fieldset>                            
+                            <hr>
                             <button type="submit" class="btn btn-primary">show popup</button>
 
                         </form>
@@ -115,6 +105,6 @@
 
             </div>
         </div>
-        <script src="js/js.app">
+        <script src="/js/app.js"></script>        
     </body>
 </html>

@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/create', 'OpenPopupController@create');
+Route::post('/create/settings', 'OpenPopupController@popupFormSettingsJson');
 
 Route::post('/', 'OpenPopupController@show');

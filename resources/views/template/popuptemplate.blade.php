@@ -41,25 +41,18 @@
         @yield('jscripts')
 
         <script>
-            $(document).ready(function(){
+            $(document).ready(function(){                
                 $('#educationalModal').modal('show');
 
                 $('#educationalModal').on('hidden.bs.modal', function(e){
                     if (typeof startScripts === 'function') {                        
                         startScripts();
                     }
-                });
+                });                
             });
 
-            $(document).on('keydown', function(e){
-                if(e.keyCode === 116){
-                    window.onbeforeunload = null;
-                }
-            });
-
-            window.onbeforeunload = noExit;
-            function noExit() {
-                return '';
+            window.onbeforeunload = function() {
+                return false;
             }
         </script>
     </body>

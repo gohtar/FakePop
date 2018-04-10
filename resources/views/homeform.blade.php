@@ -76,15 +76,33 @@
                     <div class="col-sm">
                         <form action="/" method="post" target="_blank">
                             @csrf
+                            
                             <div class="form-group">
                                 <label for="popupTitleInput">Popup Title (title of tab or window)</label>
                                 <input type="text" class="form-control text-center" id="popupTitleInput" name="popupTitle" value="Windows Firewall Warning">
                             </div>
+                            
                             <div class="form-group">
                                 <label for="calledPhoneNumberInput">Called Phone Number (Type it exactly how you want it to appear)</label>
                                 <input type="text" class="form-control text-center" id="calledPhoneNumberInput" name="scammernumber">
                             </div>
+
+                            <div class="form-group">
+                                <label for="errorCodeTextInput">Error Code (if any)</label>
+                                <input type="text" class="form-control text-center" id="errorCodeTextInput" name="errorcode">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="popupOptions">Popup Type</label>
+                                <select id="popupOptions" name="popup_id">
+                                @foreach($popup_options as $id => $option_text)
+                                    <option value="{{$id}}">{{$option_text}}</option>
+                                @endforeach
+                                </select>                                
+                            </div>
+                            
                             <button type="submit" class="btn btn-primary">Submit</button>
+
                         </form>
                     </div>
                 </div>
@@ -93,7 +111,7 @@
                     <div class="col-sm">
                         <span class="font-weight-bold">Make sure to delete this page from your internet history.</span>
                     </div>
-                </div>
+                </div>                
 
             </div>
         </div>

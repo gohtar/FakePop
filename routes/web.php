@@ -12,17 +12,23 @@
 */
 
 use Illuminate\Http\Request;
+use App\PopupRegister;
 
 Route::get('/', function () {
     return '';
 });
 
 Route::get('/create', function () {
-    return view('homeform');
+    return view('homeform', ['popup_options' => array_column(PopupRegister::$fake_popup_options, 'text')]);
 });
 
-Route::post('/',function(Request $request){
+Route::post('/', function (Request $request) {
     $phonenumber = $request->input('scammernumber');
     $title = $request->input('popupTitle');
-    return view('popups.virus1',['title'=> $title,'phonenumber'=>$phonenumber]);    
+    $errorcode = $request->input('errorcode');
+    $popupid = $request->input('popup_id');
+
+    $view = PopupRegister::$fake_popup_options[$popupid]['view'];
+
+    return view('popups.' . $view, ['title' => $title, 'phonenumber' => $phonenumber, 'errorcode' => $errorcode]);
 });

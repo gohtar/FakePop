@@ -45,4 +45,4 @@ The root web page was also intentionally left blank in case the scammer tries to
 
 Okay go to http://45.77.73.52/create
 
-Feel free to use that server until I take it down if things get out of control.
+Feel free to use that server until if I have to take it down if things get out of control.

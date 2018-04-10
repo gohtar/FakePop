@@ -41,6 +41,6 @@ The root web page was also intentionally left blank in case the scammer tries to
  
 ### I want to see it now ###
 
-Okay go to http://http://45.77.73.52/create
+Okay go to http://45.77.73.52/create
 
 Feel free to use that server until I take it down if things get out of control.

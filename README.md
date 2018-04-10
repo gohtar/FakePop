@@ -27,6 +27,14 @@ How to get running (Linux Instructions):
 * At this point the code is ready to go
 * You can either point your web server to the public folder as the site root or run "php artisan serve" to start up php's local web server to test it out.
 
+### How do I use the popups? ###
+
+Once the code is installed and running just point your browser to http://[ip address]/create
+
+This app was created with the intention that it would not have a domain associated with it, but instead you can use your computer's hosts file to make up domain names for it on the fly.
+
+The root web page was also intentionally left blank in case the scammer tries to go to the fake domain after closing the message to see it again, we wouldn't want them to see the creation page after all.
+
 ### Who do I talk to? ###
 
  * Repo owner or admin

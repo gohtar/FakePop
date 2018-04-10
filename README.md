@@ -4,6 +4,8 @@ This is a simple web application for displaying FAKE scammer style webpages.
 
 This should only be used for education or scam-baiting purposes only.
 
+This allows you to display FAKE error / virus messages with some dynamic fields you get to set before displaying the page, like the scammer's phone number.
+
 ### How do I get set up? ###
 
 This app uses the laravel framework.
